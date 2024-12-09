@@ -31,9 +31,34 @@ public class Interrogatorio {
         Boolean p5 =scan.nextBoolean();
         perguntas.add(p5);
 
-        System.out.println(perguntas);
+        int trueCount = 0;
+        int falseCount = 0;
+        for (Boolean bool : perguntas) {
+            if (bool) {
+                trueCount++;
+            } else {
+                falseCount++;
+            }
+        }    
 
-    
+        scan.close();
+        
+        System.out.println("----------------------------------------");
+
+        if (falseCount==5) {
+            System.out.println("Você é INOCENTE!");
+        }
+        else if (trueCount<=2) {
+            System.out.println("Você foi considerado SUSPEITO!");
+        }
+        else if (trueCount<=4) {
+            System.out.println("Você foi considerado CUMPLICE!");
+        } else {
+            System.out.println("Você foi considerado o ASSASSINO!");
+        }
+
+        System.out.println("----------------------------------------");
+    } 
 
     } 
-}
+
